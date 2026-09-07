@@ -7155,18 +7155,17 @@ checksum = "ebc1c04c71510c7f702b52b7c350734c9ff1295c464a03335b00bb84fc54f853"
 [[package]]
 name = "uniffi"
 version = "0.32.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a782a48d72cfd7a2d65cfc7c691dbf5375c43104b3c195f7eccc716dcc3540c8"
+source = "git+https://github.com/matrix-org/uniffi-rs/?rev=582912af#582912af9caca3fda18806583a6b4e7c71c3f180"
 dependencies = [
  "anyhow",
  "camino",
  "cargo_metadata",
  "clap",
- "uniffi_bindgen",
+ "uniffi_bindgen 0.32.0 (git+https://github.com/matrix-org/uniffi-rs/?rev=582912af)",
  "uniffi_build",
  "uniffi_core",
  "uniffi_macros",
- "uniffi_pipeline",
+ "uniffi_pipeline 0.32.0 (git+https://github.com/matrix-org/uniffi-rs/?rev=582912af)",
 ]
 
 [[package]]
@@ -7196,28 +7195,51 @@ dependencies = [
  "tempfile",
  "textwrap",
  "toml",
- "uniffi_internal_macros",
- "uniffi_meta",
- "uniffi_pipeline",
- "uniffi_udl",
+ "uniffi_internal_macros 0.32.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "uniffi_meta 0.32.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "uniffi_pipeline 0.32.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "uniffi_udl 0.32.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "uniffi_bindgen"
+version = "0.32.0"
+source = "git+https://github.com/matrix-org/uniffi-rs/?rev=582912af#582912af9caca3fda18806583a6b4e7c71c3f180"
+dependencies = [
+ "anyhow",
+ "askama",
+ "camino",
+ "cargo_metadata",
+ "fs-err",
+ "glob",
+ "goblin 0.8.2",
+ "heck",
+ "indexmap",
+ "once_cell",
+ "serde",
+ "tempfile",
+ "textwrap",
+ "toml",
+ "uniffi_internal_macros 0.32.0 (git+https://github.com/matrix-org/uniffi-rs/?rev=582912af)",
+ "uniffi_meta 0.32.0 (git+https://github.com/matrix-org/uniffi-rs/?rev=582912af)",
+ "uniffi_pipeline 0.32.0 (git+https://github.com/matrix-org/uniffi-rs/?rev=582912af)",
+ "uniffi_udl 0.32.0 (git+https://github.com/matrix-org/uniffi-rs/?rev=582912af)",
 ]
 
 [[package]]
 name = "uniffi_build"
 version = "0.32.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "763a19ad720fce8c9a98576e04c0ccc5d2d155aa6b953c864587073292c7ccfc"
+source = "git+https://github.com/matrix-org/uniffi-rs/?rev=582912af#582912af9caca3fda18806583a6b4e7c71c3f180"
 dependencies = [
  "anyhow",
  "camino",
- "uniffi_bindgen",
+ "uniffi_bindgen 0.32.0 (git+https://github.com/matrix-org/uniffi-rs/?rev=582912af)",
 ]
 
 [[package]]
 name = "uniffi_core"
 version = "0.32.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8e32e261c5b0dfaba6488f536e71957dddd6b1a498ac7eb791bee56b60a086be"
+source = "git+https://github.com/matrix-org/uniffi-rs/?rev=582912af#582912af9caca3fda18806583a6b4e7c71c3f180"
 dependencies = [
  "anyhow",
  "async-compat",
@@ -7240,10 +7262,21 @@ dependencies = [
 ]
 
 [[package]]
+name = "uniffi_internal_macros"
+version = "0.32.0"
+source = "git+https://github.com/matrix-org/uniffi-rs/?rev=582912af#582912af9caca3fda18806583a6b4e7c71c3f180"
+dependencies = [
+ "anyhow",
+ "indexmap",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.119",
+]
+
+[[package]]
 name = "uniffi_macros"
 version = "0.32.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "330be6770532e86320df31f54c70bb0be67588594e8e77fa56e9083a3fed5d0d"
+source = "git+https://github.com/matrix-org/uniffi-rs/?rev=582912af#582912af9caca3fda18806583a6b4e7c71c3f180"
 dependencies = [
  "camino",
  "fs-err",
@@ -7253,7 +7286,7 @@ dependencies = [
  "serde",
  "syn 2.0.117",
  "toml",
- "uniffi_meta",
+ "uniffi_meta 0.32.0 (git+https://github.com/matrix-org/uniffi-rs/?rev=582912af)",
 ]
 
 [[package]]
@@ -7264,8 +7297,19 @@ checksum = "78de021f5547e56ab16c665a49d67d4fd3d31e77422f7739a2e9359d328cd9e7"
 dependencies = [
  "anyhow",
  "siphasher",
- "uniffi_internal_macros",
- "uniffi_pipeline",
+ "uniffi_internal_macros 0.32.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "uniffi_pipeline 0.32.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "uniffi_meta"
+version = "0.32.0"
+source = "git+https://github.com/matrix-org/uniffi-rs/?rev=582912af#582912af9caca3fda18806583a6b4e7c71c3f180"
+dependencies = [
+ "anyhow",
+ "siphasher",
+ "uniffi_internal_macros 0.32.0 (git+https://github.com/matrix-org/uniffi-rs/?rev=582912af)",
+ "uniffi_pipeline 0.32.0 (git+https://github.com/matrix-org/uniffi-rs/?rev=582912af)",
 ]
 
 [[package]]
@@ -7278,7 +7322,19 @@ dependencies = [
  "heck",
  "indexmap",
  "tempfile",
- "uniffi_internal_macros",
+ "uniffi_internal_macros 0.32.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "uniffi_pipeline"
+version = "0.32.0"
+source = "git+https://github.com/matrix-org/uniffi-rs/?rev=582912af#582912af9caca3fda18806583a6b4e7c71c3f180"
+dependencies = [
+ "anyhow",
+ "heck",
+ "indexmap",
+ "tempfile",
+ "uniffi_internal_macros 0.32.0 (git+https://github.com/matrix-org/uniffi-rs/?rev=582912af)",
 ]
 
 [[package]]
@@ -7289,8 +7345,19 @@ checksum = "a6e57996bc58009cc29bf04845d627ae313c2547b87171c1c349d6c51a1656c0"
 dependencies = [
  "anyhow",
  "textwrap",
- "uniffi_meta",
- "weedle2",
+ "uniffi_meta 0.32.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "weedle2 5.0.0 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "uniffi_udl"
+version = "0.32.0"
+source = "git+https://github.com/matrix-org/uniffi-rs/?rev=582912af#582912af9caca3fda18806583a6b4e7c71c3f180"
+dependencies = [
+ "anyhow",
+ "textwrap",
+ "uniffi_meta 0.32.0 (git+https://github.com/matrix-org/uniffi-rs/?rev=582912af)",
+ "weedle2 5.0.0 (git+https://github.com/matrix-org/uniffi-rs/?rev=582912af)",
 ]
 
 [[package]]
@@ -7679,6 +7746,14 @@ name = "weedle2"
 version = "5.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "998d2c24ec099a87daf9467808859f9d82b61f1d9c9701251aea037f514eae0e"
+dependencies = [
+ "nom",
+]
+
+[[package]]
+name = "weedle2"
+version = "5.0.0"
+source = "git+https://github.com/matrix-org/uniffi-rs/?rev=582912af#582912af9caca3fda18806583a6b4e7c71c3f180"
 dependencies = [
  "nom",
 ]
@@ -8344,7 +8419,7 @@ dependencies = [
  "regex",
  "serde",
  "serde_json",
- "uniffi_bindgen",
+ "uniffi_bindgen 0.32.0 (registry+https://github.com/rust-lang/crates.io-index)",
  "url",
  "xshell",
 ]

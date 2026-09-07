@@ -252,3 +252,4 @@ lto = false
 [patch.crates-io]
 async-compat = { git = "https://github.com/element-hq/async-compat", rev = "5a27c8b290f1f1dcfc0c4ec22c464e38528aa591" }
 const_panic = { git = "https://github.com/jplatte/const_panic", rev = "e0b317a9a7bde2d48a7d15b6a60d70e4a41d3b5f" }
+uniffi = { git = "https://github.com/matrix-org/uniffi-rs/", rev = "582912af" }
