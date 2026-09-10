@@ -571,7 +571,26 @@ impl Client {
         ClientBuilder::new()
     }
 
-    pub(crate) fn base_client(&self) -> &BaseClient {
+    /// The underlying base client.
+    ///
+    /// This is `pub` in the WhiteBirchForumTeam fork (upstream has it as
+    /// `pub(crate)`). It is the only change this fork carries, and it exists so
+    /// that a downstream crate can reach the `OlmMachine`:
+    ///
+    /// ```text
+    /// Client::base_client() -> BaseClient::olm_machine()  // already pub upstream
+    ///     -> OlmMachine::receive_sync_changes(..)          // feed to-device events in
+    ///     -> OlmMachine::encrypt_room_event_raw(..)        // encrypt a room event ourselves
+    ///     -> OlmMachine::share_room_key(..)                // distribute the Megolm session
+    /// ```
+    ///
+    /// Everything in that chain below `base_client()` is already public
+    /// upstream, so widening this one accessor is enough; nothing else is
+    /// patched. `Client::olm_machine_for_testing()` reaches the same object but
+    /// is gated behind the `testing` feature, which pulls `wiremock` and
+    /// `matrix-sdk-test` into the dependency graph - not acceptable in a
+    /// shipped binary.
+    pub fn base_client(&self) -> &BaseClient {
         &self.inner.base_client
     }
 
